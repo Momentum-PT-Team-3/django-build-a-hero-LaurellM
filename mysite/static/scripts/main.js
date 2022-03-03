@@ -29,6 +29,19 @@ fetch(URL, {
 .then(response => {
     return response.json();
 })
-.then(data => {
-    console.log(data)
+.then(heroArray => {
+    console.log(heroArray)
+// callback
+let heroList = document.querySelector('#hero_list')
+console.log(heroList)
+
+    for (let hero of heroArray){
+        console.log(hero)
+
+        let heroItem = document.createElement('li')
+        heroItem.innerText = `${hero.name} - ${hero.alias}`
+        heroList.appendChild(heroItem)
+}
+
 })
+
